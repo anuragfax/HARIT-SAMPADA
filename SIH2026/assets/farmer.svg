@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" role="img" aria-labelledby="title desc">
+  <title id="title">Farmer standing in a field</title>
+  <desc id="desc">A friendly Indian farmer wearing a green turban and holding a hoe.</desc>
+  <defs>
+    <linearGradient id="turban" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f7c3d"/>
+      <stop offset="1" stop-color="#274f2b"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d5a84c"/>
+      <stop offset="1" stop-color="#a96d32"/>
+    </linearGradient>
+  </defs>
+
+  <ellipse cx="121" cy="343" rx="73" ry="12" fill="#294a28" opacity=".28"/>
+
+  <path d="M185 42c18 56 24 112 27 178" fill="none" stroke="#765238" stroke-width="7" stroke-linecap="round"/>
+  <path d="M206 218l-8 24M206 218l15 18" fill="none" stroke="#765238" stroke-width="6" stroke-linecap="round"/>
+
+  <path d="M76 121c4-29 21-46 45-47 27-1 43 19 44 49l-8 45H84z" fill="#a96c43"/>
+  <path d="M72 81c8-30 28-47 62-42 25 3 39 17 43 42l-14 19-9-19-18 10-22-12-23 19z" fill="url(#turban)"/>
+  <path d="M80 77c20 8 46 9 78-3M88 61c18 8 40 9 60 1" fill="none" stroke="#81a85d" stroke-width="6" stroke-linecap="round" opacity=".75"/>
+  <path d="M104 126c8 5 18 5 27 0" fill="none" stroke="#633a2a" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="103" cy="105" r="4" fill="#2d241d"/>
+  <circle cx="139" cy="105" r="4" fill="#2d241d"/>
+  <path d="M113 115c5 3 10 3 15 0" fill="none" stroke="#7d4432" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M92 136c13 17 39 20 55 0l15 17c-20 24-55 26-78 2z" fill="#f0c774"/>
+
+  <path d="M76 158c18-17 59-18 82 0l19 93-104 0z" fill="url(#shirt)" stroke="#85562e" stroke-width="3"/>
+  <path d="M111 159v88M128 159v88" stroke="#e5bd67" stroke-width="3" opacity=".7"/>
+  <path d="M82 170c-18 13-27 34-31 59" fill="none" stroke="#a96c43" stroke-width="17" stroke-linecap="round"/>
+  <path d="M158 169c18 16 28 38 31 62" fill="none" stroke="#a96c43" stroke-width="17" stroke-linecap="round"/>
+  <circle cx="50" cy="228" r="10" fill="#a96c43"/>
+  <circle cx="190" cy="233" r="10" fill="#a96c43"/>
+
+  <path d="M72 242h101l-9 67c-22 13-63 13-84 0z" fill="#e6d5a0" stroke="#b09a67" stroke-width="3"/>
+  <path d="M80 259h86M78 276h85" stroke="#c5ad78" stroke-width="3" opacity=".8"/>
+  <path d="M78 304l38 1-4 35H76zM119 305l38-1 12 36h-37z" fill="#4f693b"/>
+  <path d="M75 338h39M129 340h44" stroke="#4a3427" stroke-width="9" stroke-linecap="round"/>
+</svg>

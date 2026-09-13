@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> HARIT SAMPADA - Smart Crop Planning</title>
+
+    <meta name="description" content="A farmer-friendly crop recommendation platform.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="intro-screen" id="introScreen">
+
+        <div class="intro-logo">
+
+            <div class="intro-logo-mark">
+                <img src="assets/harit sampada logo.png" alt="HARIT SAMPADA Logo">
+            </div>
+
+            <h1>HARIT SAMPADA  </h1>
+
+            <p>
+                Better crops, Better decisions, <br>
+                Which brings Agricultural Prosperity.
+            </p>
+
+        </div>
+
+    </div>
+
+    <main class="app">
+
+        <div class="landscape">
+
+            <div class="sun"></div>
+
+            <div class="cloud one"></div>
+            <div class="cloud two"></div>
+
+            <div class="hill back"></div>
+            <div class="hill front"></div>
+
+            <div class="field"></div>
+
+            <div class="farmer" id="farmer">
+                <img class="farmer-character" id="farmerCharacter" src="assets/sad farmer.png"
+                    alt="Sad Indian farmer waiting for crop recommendations">
+            </div>
+
+        </div>
+
+        <header class="topbar">
+
+            <div class="brand" id="brand">
+
+                <div class="brand-mark">
+                    <img src="assets/harit sampada logo.png" alt="HARIT SAMPADA Logo">
+                </div>
+
+                <div class="brand-name">
+                    HARIT SAMPADA
+                </div>
+
+            </div>
+
+            <div class="nav-actions">
+
+                <button class="nav-btn" id="languageButton" type="button" title="Language">
+                    EN
+                </button>
+
+                <button class="nav-btn" id="helpButton" title="Help">
+                    ?
+                </button>
+
+                <button class="nav-btn" id="settingsButton" title="Settings">
+                    ⚙
+                </button>
+
+            </div>
+
+        </header>
+
+        <section class="content">
+
+            <div class="main-card" id="mainCard">
+
+                <div id="startScreen">
+
+                    <span class="eyebrow">
+                        🌾 Harit Sampada Crop Planning
+                    </span>
+
+                    <h2 class="hero-title">
+
+                        Apne Khet Ki
+
+                        <span>
+                            Sahi Fasal Chunein.
+                        </span>
+
+                    </h2>
+
+                    <p class="hero-description">
+
+                        Apna land code enter kijiye.
+                        Hum aapki zameen, mitti, paani,
+                        mausam aur budget ke according
+                        suitable crops suggest karenge.
+
+                    </p>
+
+                    <form class="code-box" id="landForm">
+
+                        <input class="code-input" id="landCode" type="text" placeholder="Jaise: UP-KNP-ALV-01"
+                            autocomplete="off" maxlength="30" required>
+
+                        <button class="primary-button" type="submit">
+                            Fasal Batayein
+                        </button>
+
+                    </form>
+
+                    <p class="hint">
+
+                        Demo Code:
+                        <strong>UP-KNP-ALV-01</strong>
+
+                    </p>
+
+                </div>
+
+                <div class="loading" id="loadingScreen">
+
+                    <div class="loading-circle"></div>
+
+                    <p class="loading-text">
+                        Aapke khet ko samjha ja raha hai...
+                    </p>
+
+                    <p class="hint">
+                        Mitti • Mausam • Paani • Budget
+                    </p>
+
+                </div>
+
+                <div class="result-screen" id="resultScreen">
+
+                    <span class="eyebrow">
+                        Your Land Profile
+                    </span>
+
+                    <h2 class="result-heading">
+
+                        Aapki Zameen
+
+                        <span>
+                            Taiyaar Hai.
+                        </span>
+
+                    </h2>
+
+                    <div class="profile-grid">
+
+                        <div class="profile-item">
+
+                            <div class="profile-icon">
+                                📍
+                            </div>
+
+                            <div class="profile-label">
+                                Region
+                            </div>
+
+                            <div class="profile-value" id="regionValue">
+                                Ghaziabad
+                            </div>
+
+                        </div>
+
+                        <div class="profile-item">
+
+                            <div class="profile-icon">
+                                🪨
+                            </div>
+
+                            <div class="profile-label">
+                                Soil
+                            </div>
+
+                            <div class="profile-value" id="soilValue">
+                                Alluvial
+                            </div>
+
+                        </div>
+
+                        <div class="profile-item">
+
+                            <div class="profile-icon">
+                                🌾
+                            </div>
+
+                            <div class="profile-label">
+                                Land
+                            </div>
+
+                            <div class="profile-value" id="areaValue">
+                                2.5 Acres
+                            </div>
+
+                        </div>
+
+                        <div class="profile-item">
+
+                            <div class="profile-icon">
+                                🌦️
+                            </div>
+
+                            <div class="profile-label">
+                                Season
+                            </div>
+
+                            <div class="profile-value" id="seasonValue">
+                                Rabi
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="selection-area">
+
+                        <div class="selection-box">
+
+                            <h4>
+                                💧 Paani Kitna Available Hai?
+                            </h4>
+
+                            <div class="option-group">
+
+                                <button class="option selected" data-type="water" data-value="low">
+                                    Kam
+                                </button>
+
+                                <button class="option" data-type="water" data-value="medium">
+                                    Madhyam
+                                </button>
+
+                                <button class="option" data-type="water" data-value="high">
+                                    Zyada
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <div class="selection-box">
+
+                            <h4>
+                                💰 Aapka Budget?
+                            </h4>
+
+                            <div class="option-group">
+
+                                <button class="option selected" data-type="budget" data-value="low">
+                                    Kam
+                                </button>
+
+                                <button class="option" data-type="budget" data-value="medium">
+                                    Madhyam
+                                </button>
+
+                                <button class="option" data-type="budget" data-value="high">
+                                    Zyada
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="recommendation" id="recommendation">
+
+                        <h3 class="recommendation-title">
+                            🌱 Aapke Liye Behtar Faslein
+                        </h3>
+
+                        <p class="recommendation-subtitle">
+                            Aapki zameen aur selected conditions ke according.
+                        </p>
+
+                        <div class="crop-grid" id="cropGrid">
+
+                        </div>
+
+                        <div class="result-actions">
+
+                            <button class="secondary-button" id="newSearch">
+                                ← Naya Khet
+                            </button>
+
+                            <button class="primary-button" id="cropPlanButton">
+                                Crop Plan Dekhein →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="footer">
+
+            HARIT SAMPADA • Prototype for SIH26193
+
+        </div>
+
+        <div class="toast" id="toast">
+            Message
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
