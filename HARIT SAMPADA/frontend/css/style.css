@@ -1,0 +1,1807 @@
+                                            :root {
+                                                --cream: #f3f0d9;
+                                                --cream-light: #faf8e8;
+                                                --cream-dark: #e5e1bd;
+
+                                                --green-dark: #183d20;
+                                                --green: #315f2b;
+                                                --green-mid: #4e7938;
+                                                --green-light: #78965b;
+
+                                                --yellow: #e7c95a;
+                                                --brown: #765333;
+                                                --soil: #765238;
+
+                                                --text: #1f321f;
+                                                --text-light: #61705a;
+
+                                                --white: #ffffff;
+
+                                                --border: rgba(24, 61, 32, 0.25);
+
+                                                --shadow:
+                                                    0 18px 45px rgba(36, 55, 28, 0.14);
+
+                                                --radius-small: 12px;
+                                                --radius-medium: 20px;
+                                                --radius-large: 30px;
+
+                                                --transition: 300ms ease;
+                                            }
+
+                                            * {
+                                                box-sizing: border-box;
+                                                margin: 0;
+                                                padding: 0;
+                                            }
+
+                                            html {
+                                                scroll-behavior: smooth;
+                                                color-scheme: light;
+                                            }
+
+                                            body {
+                                                min-height: 100vh;
+
+                                                font-family:
+                                                    "Trebuchet MS",
+                                                    Arial,
+                                                    sans-serif;
+
+                                                color: var(--text);
+
+                                                background: var(--cream);
+
+                                                overflow-x: hidden;
+                                            }
+
+                                            button,
+                                            input,
+                                            select {
+                                                font: inherit;
+                                            }
+
+                                            button {
+                                                cursor: pointer;
+                                            }
+
+                                            .intro-screen {
+                                                position: fixed;
+                                                inset: 0;
+
+                                                z-index: 9999;
+
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+
+                                                background: var(--cream);
+
+                                                transition:
+                                                    opacity 900ms ease,
+                                                    visibility 900ms ease;
+                                            }
+
+                                            .intro-screen.hide {
+                                                opacity: 0;
+                                                visibility: hidden;
+                                                pointer-events: none;
+                                            }
+
+                                            .intro-logo {
+                                                position: relative;
+
+                                                text-align: center;
+
+                                                animation: introLogoIn 1200ms ease forwards;
+                                            }
+
+                                            .intro-logo-mark {
+                                                width: 110px;
+                                                height: 110px;
+
+                                                margin: auto;
+                                                margin-bottom: 22px;
+
+                                                border-radius: 50%;
+
+                                                display: grid;
+                                                place-items: center;
+
+                                                background: var(--green-dark);
+
+                                                color: var(--cream);
+
+                                                font-size: 48px;
+                                                font-weight: 900;
+
+                                                box-shadow: var(--shadow);
+                                            }
+
+                                            .intro-logo-mark img,
+                                            .brand-mark img {
+                                                display: block;
+
+                                                width: 82%;
+                                                height: 82%;
+
+                                                object-fit: contain;
+                                            }
+
+                                            .intro-logo h1 {
+                                                font-size: clamp(40px, 8vw, 82px);
+
+                                                letter-spacing: 7px;
+
+                                                color: var(--green-dark);
+                                            }
+
+                                            .intro-logo p {
+                                                margin-top: 10px;
+
+                                                font-size: 13px;
+
+                                                letter-spacing: 4px;
+                                                text-transform: uppercase;
+
+                                                color: var(--green-mid);
+                                            }
+
+                                            @keyframes introLogoIn {
+                                                from {
+                                                    opacity: 0;
+                                                    transform: scale(.85) translateY(25px);
+                                                }
+
+                                                to {
+                                                    opacity: 1;
+                                                    transform: scale(1) translateY(0);
+                                                }
+                                            }
+
+                                            .app {
+                                                min-height: 100vh;
+
+                                                position: relative;
+
+                                                overflow: hidden;
+                                            }
+
+                                            .topbar {
+                                                position: fixed;
+
+                                                top: 0;
+                                                left: 0;
+                                                right: 0;
+
+                                                height: 76px;
+
+                                                z-index: 100;
+
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: space-between;
+
+                                                padding: 0 34px;
+
+                                                pointer-events: none;
+                                            }
+
+                                            .brand {
+                                                pointer-events: auto;
+
+                                                display: flex;
+                                                align-items: center;
+                                                gap: 12px;
+
+                                                opacity: 0;
+
+                                                transform: translateY(-15px);
+
+                                                transition:
+                                                    opacity 900ms ease,
+                                                    transform 900ms ease;
+                                            }
+
+                                            .brand.visible {
+                                                opacity: 1;
+                                                transform: translateY(0);
+                                            }
+
+                                            .brand-mark {
+                                                width: 42px;
+                                                height: 42px;
+
+                                                border-radius: 50%;
+
+                                                display: grid;
+                                                place-items: center;
+
+                                                background: var(--green-dark);
+
+                                                color: var(--cream);
+
+                                                font-weight: 900;
+                                                font-size: 18px;
+                                            }
+
+                                            .brand-name {
+                                                font-size: 19px;
+                                                font-weight: 900;
+
+                                                letter-spacing: 1px;
+                                            }
+
+                                            .nav-actions {
+                                                display: flex;
+                                                align-items: center;
+                                                gap: 9px;
+
+                                                pointer-events: auto;
+                                            }
+
+                                            .nav-btn {
+                                                height: 40px;
+                                                min-width: 40px;
+
+                                                padding: 0 13px;
+
+                                                border: 1px solid var(--border);
+
+                                                border-radius: 999px;
+
+                                                background: rgba(250, 248, 232, .65);
+
+                                                color: var(--green-dark);
+
+                                                font-size: 13px;
+                                                font-weight: 700;
+
+                                                transition: var(--transition);
+                                            }
+
+                                            .nav-btn:hover {
+                                                background: var(--green-dark);
+                                                color: var(--cream);
+
+                                                transform: translateY(-2px);
+                                            }
+
+                                            .about-modal {
+                                                position: fixed;
+                                                inset: 0;
+                                                z-index: 200;
+                                                display: grid;
+                                                place-items: center;
+                                                padding: 24px;
+                                                background: rgba(24, 61, 32, .22);
+                                                backdrop-filter: blur(4px);
+                                                opacity: 0;
+                                                visibility: hidden;
+                                                pointer-events: none;
+                                                transition: opacity 220ms ease, visibility 220ms ease;
+                                            }
+
+                                            .about-modal.open {
+                                                opacity: 1;
+                                                visibility: visible;
+                                                pointer-events: auto;
+                                            }
+
+                                            .about-panel {
+                                                position: relative;
+                                                width: min(430px, 100%);
+                                                padding: 30px;
+                                                border: 1px solid var(--border);
+                                                border-radius: var(--radius-medium);
+                                                background: rgba(250, 248, 232, .97);
+                                                box-shadow: var(--shadow);
+                                                color: var(--text);
+                                                transform: translateY(10px) scale(.96);
+                                                transition: transform 220ms ease;
+                                            }
+
+                                            .about-modal.open .about-panel {
+                                                transform: translateY(0) scale(1);
+                                            }
+
+                                            .about-close {
+                                                position: absolute;
+                                                top: 12px;
+                                                right: 14px;
+                                                width: 32px;
+                                                height: 32px;
+                                                border: 1px solid var(--border);
+                                                border-radius: 50%;
+                                                background: transparent;
+                                                color: var(--green-dark);
+                                                font-size: 18px;
+                                                line-height: 1;
+                                                transition: var(--transition);
+                                            }
+
+                                            .about-close:hover {
+                                                background: var(--green-dark);
+                                                color: var(--cream);
+                                            }
+
+                                            .about-brand {
+                                                display: flex;
+                                                align-items: center;
+                                                gap: 10px;
+                                                margin-bottom: 20px;
+                                                color: var(--green-dark);
+                                                font-size: 13px;
+                                                font-weight: 900;
+                                                letter-spacing: 1px;
+                                            }
+
+                                            .about-brand-mark {
+                                                display: grid;
+                                                place-items: center;
+                                                width: 38px;
+                                                height: 38px;
+                                                border-radius: 50%;
+                                                background: var(--green-dark);
+                                            }
+
+                                            .about-brand-mark img {
+                                                width: 82%;
+                                                height: 82%;
+                                                object-fit: contain;
+                                            }
+
+                                            .about-panel h2 {
+                                                margin-bottom: 12px;
+                                                color: var(--green-dark);
+                                                font-size: 27px;
+                                            }
+
+                                            .about-description,
+                                            .about-prototype {
+                                                color: var(--text-light);
+                                                font-size: 13px;
+                                                line-height: 1.65;
+                                            }
+
+                                            .about-prototype {
+                                                margin-top: 10px;
+                                            }
+
+                                            .about-prototype strong {
+                                                color: var(--green-dark);
+                                            }
+
+                                            .about-workflow {
+                                                margin-top: 20px;
+                                                padding-top: 17px;
+                                                border-top: 1px solid var(--border);
+                                            }
+
+                                            .about-workflow h3 {
+                                                margin-bottom: 12px;
+                                                color: var(--green-dark);
+                                                font-size: 14px;
+                                            }
+
+                                            .about-workflow ol {
+                                                display: grid;
+                                                gap: 9px;
+                                                list-style: none;
+                                                color: var(--text-light);
+                                                font-size: 13px;
+                                            }
+
+                                            .about-workflow li {
+                                                display: flex;
+                                                align-items: center;
+                                                gap: 10px;
+                                            }
+
+                                            .about-workflow li>span:first-child {
+                                                display: grid;
+                                                flex: 0 0 23px;
+                                                place-items: center;
+                                                width: 23px;
+                                                height: 23px;
+                                                border-radius: 50%;
+                                                background: var(--green-dark);
+                                                color: var(--cream);
+                                                font-size: 11px;
+                                                font-weight: 900;
+                                            }
+
+                                            .about-workflow li>span:last-child {
+                                                display: block;
+                                                width: auto;
+                                                height: auto;
+                                                border-radius: 0;
+                                                background: transparent;
+                                                color: var(--text-light);
+                                                font-size: 13px;
+                                                font-weight: 400;
+                                            }
+
+                                            .about-footer {
+                                                margin-top: 20px;
+                                                color: var(--green);
+                                                font-size: 11px;
+                                                font-style: italic;
+                                            }
+
+                                            .landscape {
+                                                position: fixed;
+                                                inset: 0;
+
+                                                z-index: 0;
+
+                                                overflow: hidden;
+
+                                                background:
+                                                    linear-gradient(to bottom,
+                                                        #dce9ce 0%,
+                                                        #edf0d6 48%,
+                                                        #c9d89e 49%,
+                                                        #a5bd6d 70%,
+                                                        #78934d 100%);
+                                            }
+
+                                            .sun {
+                                                position: absolute;
+
+                                                width: 130px;
+                                                height: 130px;
+
+                                                top: 11%;
+                                                right: 13%;
+
+                                                border-radius: 50%;
+
+                                                background: var(--yellow);
+
+                                                box-shadow:
+                                                    0 0 0 18px rgba(231, 201, 90, .13),
+                                                    0 0 0 38px rgba(231, 201, 90, .07);
+
+                                                animation: sunPulse 5s ease-in-out infinite;
+                                            }
+
+                                            @keyframes sunPulse {
+
+                                                0%,
+                                                100% {
+                                                    transform: scale(1);
+                                                }
+
+                                                50% {
+                                                    transform: scale(1.06);
+                                                }
+                                            }
+
+                                            .cloud {
+                                                position: absolute;
+
+                                                width: 170px;
+                                                height: 50px;
+
+                                                background: rgba(255, 255, 255, .58);
+
+                                                border-radius: 50px;
+
+                                                animation:
+                                                    cloudMove 30s linear infinite;
+                                            }
+
+                                            .cloud::before,
+                                            .cloud::after {
+                                                content: "";
+
+                                                position: absolute;
+
+                                                background: inherit;
+
+                                                border-radius: 50%;
+                                            }
+
+                                            .cloud::before {
+                                                width: 70px;
+                                                height: 70px;
+
+                                                left: 28px;
+                                                bottom: 0;
+                                            }
+
+                                            .cloud::after {
+                                                width: 85px;
+                                                height: 85px;
+
+                                                right: 25px;
+                                                bottom: 0;
+                                            }
+
+                                            .cloud.one {
+                                                top: 18%;
+                                                left: -200px;
+                                            }
+
+                                            .cloud.two {
+                                                top: 31%;
+                                                left: -300px;
+
+                                                transform: scale(.7);
+
+                                                animation-delay: -13s;
+                                            }
+
+                                            @keyframes cloudMove {
+                                                from {
+                                                    transform: translateX(-250px);
+                                                }
+
+                                                to {
+                                                    transform: translateX(calc(100vw + 400px));
+                                                }
+                                            }
+
+                                            .hill {
+                                                position: absolute;
+
+                                                left: -10%;
+                                                width: 120%;
+                                            }
+
+                                            .hill.back {
+                                                bottom: 28%;
+
+                                                height: 36%;
+
+                                                background: var(--green-light);
+
+                                                border-radius: 50% 50% 0 0;
+                                            }
+
+                                            .hill.front {
+                                                bottom: 13%;
+
+                                                height: 35%;
+
+                                                background: var(--green-mid);
+
+                                                border-radius: 55% 45% 0 0;
+                                            }
+
+                                            .field {
+                                                position: absolute;
+
+                                                left: 0;
+                                                right: 0;
+                                                bottom: 0;
+
+                                                height: 34%;
+
+                                                background:
+                                                    repeating-linear-gradient(8deg,
+                                                        rgba(36, 69, 27, .35) 0px,
+                                                        rgba(36, 69, 27, .35) 2px,
+                                                        transparent 2px,
+                                                        transparent 18px),
+                                                    linear-gradient(to bottom,
+                                                        #78904c,
+                                                        #5e773d);
+
+                                                transform: skewY(-2deg);
+                                                transform-origin: bottom;
+                                            }
+
+                                            .farmer {
+                                                position: absolute;
+
+                                                z-index: 5;
+
+                                                --farmer-width: clamp(230px, 22vw, 320px);
+
+                                                left: 16%;
+                                                bottom: 9%;
+
+                                                width: var(--farmer-width);
+                                                aspect-ratio: 205 / 340;
+
+                                                transition:
+                                                    left 1.4s ease,
+                                                    transform 700ms ease;
+                                            }
+
+                                            @keyframes farmerIdle {
+
+                                                0%,
+                                                100% {
+                                                    transform: translateY(0) rotate(0deg);
+                                                }
+
+                                                50% {
+                                                    transform: translateY(-4px) rotate(-1deg);
+                                                }
+                                            }
+
+                                            @keyframes farmerLoading {
+
+                                                0%,
+                                                100% {
+                                                    transform: translateY(0) rotate(0deg);
+                                                }
+
+                                                50% {
+                                                    transform: translateY(-6px) rotate(1.5deg);
+                                                }
+                                            }
+
+                                            .farmer.move-center {
+                                                left: 43%;
+                                            }
+
+                                            .farmer.move-right {
+                                                left: calc(100% - var(--farmer-width) - 3vw);
+                                                transform: scaleX(-1);
+                                            }
+
+                                            .farmer.happy {
+                                                transform: translateY(-8px);
+                                            }
+
+                                            .farmer.move-right.happy {
+                                                transform: scaleX(-1) translateY(-8px);
+                                            }
+
+                                            .farmer-character {
+                                                display: block;
+                                                width: 100%;
+                                                height: 100%;
+                                                object-fit: contain;
+
+                                                animation: farmerIdle 3.8s ease-in-out infinite;
+                                                transform-origin: 50% 92%;
+                                            }
+
+                                            .farmer.move-right .farmer-character {
+                                                animation-name: farmerLoading;
+                                            }
+
+                                            .farmer.happy .farmer-character {
+                                                animation-duration: 2.8s;
+                                            }
+
+                                            .content {
+                                                position: relative;
+
+                                                z-index: 10;
+
+                                                min-height: 100vh;
+
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+
+                                                padding: 105px 24px 60px;
+                                            }
+
+                                            .main-card {
+                                                width: min(700px, 92vw);
+
+                                                padding: 34px;
+
+                                                background:
+                                                    rgba(250, 248, 232, .90);
+
+                                                border:
+                                                    1px solid rgba(24, 61, 32, .18);
+
+                                                border-radius:
+                                                    var(--radius-large);
+
+                                                box-shadow:
+                                                    0 30px 80px rgba(31, 54, 26, .18);
+
+                                                backdrop-filter: blur(9px);
+
+                                                text-align: center;
+
+                                                transition:
+                                                    opacity 600ms ease,
+                                                    transform 600ms ease;
+                                            }
+
+                                            .eyebrow {
+                                                display: inline-flex;
+
+                                                padding: 7px 15px;
+
+                                                border:
+                                                    1px solid var(--border);
+
+                                                border-radius: 999px;
+
+                                                font-size: 11px;
+
+                                                font-weight: 900;
+
+                                                letter-spacing: 2px;
+
+                                                text-transform: uppercase;
+
+                                                color: var(--green);
+                                            }
+
+                                            .hero-title {
+                                                margin-top: 18px;
+
+                                                font-size:
+                                                    clamp(36px, 5.5vw, 62px);
+
+                                                line-height: .95;
+
+                                                letter-spacing: -2px;
+
+                                                color: var(--green-dark);
+                                            }
+
+                                            .hero-title span {
+                                                display: block;
+
+                                                color: var(--green-mid);
+                                            }
+
+                                            .hero-description {
+                                                max-width: 560px;
+
+                                                margin:
+                                                    18px auto 0;
+
+                                                line-height: 1.7;
+
+                                                color: var(--text-light);
+                                            }
+
+                                            .code-box {
+                                                margin-top: 25px;
+
+                                                display: flex;
+
+                                                gap: 10px;
+
+                                                padding: 8px;
+
+                                                background:
+                                                    rgba(255, 255, 255, .65);
+
+                                                border:
+                                                    1px solid var(--border);
+
+                                                border-radius:
+                                                    18px;
+                                            }
+
+                                            .code-input {
+                                                flex: 1;
+
+                                                min-width: 0;
+
+                                                height: 58px;
+
+                                                padding: 0 18px;
+
+                                                border: none;
+
+                                                outline: none;
+
+                                                background: transparent;
+
+                                                color: var(--green-dark);
+
+                                                font-size: 18px;
+
+                                                font-weight: 800;
+
+                                                letter-spacing: 1px;
+
+                                                text-transform: uppercase;
+                                            }
+
+                                            .code-input::placeholder {
+                                                color: #98a18d;
+
+                                                text-transform: none;
+
+                                                font-weight: 500;
+
+                                                letter-spacing: 0;
+                                            }
+
+                                            .primary-button {
+                                                min-height: 58px;
+
+                                                padding: 0 25px;
+
+                                                border: none;
+
+                                                border-radius: 14px;
+
+                                                background: var(--green-dark);
+
+                                                color: var(--cream);
+
+                                                font-weight: 900;
+
+                                                transition: var(--transition);
+                                            }
+
+                                            .primary-button:hover {
+                                                background: var(--green);
+
+                                                transform:
+                                                    translateY(-2px);
+
+                                                box-shadow:
+                                                    0 10px 25px rgba(24, 61, 32, .18);
+                                            }
+
+                                            .primary-button:active {
+                                                transform:
+                                                    translateY(0);
+                                            }
+
+                                            .hint {
+                                                margin-top: 14px;
+
+                                                font-size: 12px;
+
+                                                color: var(--text-light);
+                                            }
+
+                                            .loading {
+                                                display: none;
+                                            }
+
+                                            .loading.active {
+                                                display: block;
+                                            }
+
+                                            .loading-circle {
+                                                width: 70px;
+                                                height: 70px;
+
+                                                margin: 25px auto;
+
+                                                border:
+                                                    5px solid rgba(49, 95, 43, .16);
+
+                                                border-top-color:
+                                                    var(--green-dark);
+
+                                                border-radius: 50%;
+
+                                                animation:
+                                                    spin 900ms linear infinite;
+                                            }
+
+                                            @keyframes spin {
+                                                to {
+                                                    transform: rotate(360deg);
+                                                }
+                                            }
+
+                                            .loading-text {
+                                                font-weight: 800;
+
+                                                color: var(--green-dark);
+                                            }
+
+                                            .result-screen {
+                                                display: none;
+                                            }
+
+                                            .result-screen.active {
+                                                display: block;
+
+                                                animation:
+                                                    resultIn 700ms ease forwards;
+                                            }
+
+                                            @keyframes resultIn {
+                                                from {
+                                                    opacity: 0;
+                                                    transform:
+                                                        translateY(25px);
+                                                }
+
+                                                to {
+                                                    opacity: 1;
+                                                    transform:
+                                                        translateY(0);
+                                                }
+                                            }
+
+                                            .result-heading {
+                                                font-size: 36px;
+
+                                                color: var(--green-dark);
+                                            }
+
+                                            .result-heading span {
+                                                color: var(--green-mid);
+                                            }
+
+                                            .profile-grid {
+                                                display: grid;
+
+                                                grid-template-columns:
+                                                    repeat(4, 1fr);
+
+                                                gap: 10px;
+
+                                                margin-top: 18px;
+                                            }
+
+                                            .profile-item {
+                                                padding: 13px 10px;
+
+                                                border:
+                                                    1px solid var(--border);
+
+                                                border-radius:
+                                                    var(--radius-small);
+
+                                                background:
+                                                    rgba(255, 255, 255, .48);
+                                            }
+
+                                            .profile-icon {
+                                                font-size: 21px;
+                                            }
+
+                                            .profile-label {
+                                                margin-top: 8px;
+
+                                                font-size: 11px;
+
+                                                color: var(--text-light);
+                                            }
+
+                                            .profile-value {
+                                                margin-top: 4px;
+
+                                                font-weight: 900;
+
+                                                font-size: 14px;
+                                            }
+
+                                            .selection-area {
+                                                margin-top: 18px;
+
+                                                display: grid;
+
+                                                grid-template-columns:
+                                                    1fr 1fr;
+
+                                                gap: 14px;
+
+                                                text-align: left;
+                                            }
+
+                                            .selection-box {
+                                                padding: 14px;
+
+                                                border:
+                                                    1px solid var(--border);
+
+                                                border-radius:
+                                                    var(--radius-medium);
+
+                                                background:
+                                                    rgba(255, 255, 255, .42);
+                                            }
+
+                                            .selection-box h4 {
+                                                margin-bottom: 9px;
+
+                                                font-size: 14px;
+
+                                                color: var(--green-dark);
+                                            }
+
+                                            .option-group {
+                                                display: flex;
+
+                                                gap: 7px;
+
+                                                flex-wrap: wrap;
+                                            }
+
+                                            .option {
+                                                padding: 9px 13px;
+
+                                                border:
+                                                    1px solid var(--border);
+
+                                                border-radius: 999px;
+
+                                                background:
+                                                    rgba(255, 255, 255, .5);
+
+                                                color: var(--text);
+
+                                                font-size: 12px;
+
+                                                font-weight: 700;
+
+                                                transition: var(--transition);
+                                            }
+
+                                            .option:hover {
+                                                border-color:
+                                                    var(--green);
+
+                                                transform:
+                                                    translateY(-1px);
+                                            }
+
+                                            .option.selected {
+                                                background:
+                                                    var(--green-dark);
+
+                                                color:
+                                                    var(--cream);
+
+                                                border-color:
+                                                    var(--green-dark);
+                                            }
+
+                                            .recommendation {
+                                                display: none;
+
+                                                margin-top: 22px;
+                                            }
+
+                                            .recommendation.active {
+                                                display: block;
+
+                                                animation:
+                                                    recommendationIn 800ms ease;
+                                            }
+
+                                            @keyframes recommendationIn {
+                                                from {
+                                                    opacity: 0;
+                                                    transform:
+                                                        translateY(25px) scale(.97);
+                                                }
+
+                                                to {
+                                                    opacity: 1;
+                                                    transform:
+                                                        translateY(0) scale(1);
+                                                }
+                                            }
+
+                                            .recommendation-title {
+                                                font-size: 22px;
+
+                                                color: var(--green-dark);
+                                            }
+
+                                            .recommendation-subtitle {
+                                                margin-top: 5px;
+
+                                                color: var(--text-light);
+
+                                                font-size: 13px;
+                                            }
+
+                                            .crop-grid {
+                                                display: grid;
+
+                                                grid-template-columns:
+                                                    repeat(3, 1fr);
+
+                                                gap: 10px;
+
+                                                margin-top: 15px;
+                                            }
+
+                                            .crop-card {
+                                                position: relative;
+                                                padding: 18px 14px;
+                                                text-align: left;
+                                                border: 1px solid var(--border);
+                                                border-radius: var(--radius-medium);
+                                                background: rgba(255, 255, 255, .65);
+                                                backdrop-filter: blur(8px);
+                                                transition: transform 300ms ease,
+                                                    box-shadow 300ms ease;
+                                            }
+
+                                            .crop-card:hover {
+                                                transform:
+                                                    translateY(-7px);
+
+                                                box-shadow:
+                                                    0 18px 35px rgba(40, 60, 30, .12);
+                                            }
+
+                                            .rank {
+                                                position: absolute;
+
+                                                top: 13px;
+                                                right: 13px;
+
+                                                width: 30px;
+                                                height: 30px;
+
+                                                display: grid;
+                                                place-items: center;
+
+                                                border-radius: 50%;
+
+                                                background:
+                                                    var(--green-dark);
+
+                                                color:
+                                                    var(--cream);
+
+                                                font-size: 12px;
+
+                                                font-weight: 900;
+                                            }
+
+                                            .crop-emoji {
+                                                font-size: 36px;
+                                            }
+
+                                            .crop-name {
+                                                margin-top: 9px;
+
+                                                font-size: 18px;
+
+                                                font-weight: 900;
+
+                                                color: var(--green-dark);
+                                            }
+
+                                            .crop-tags {
+                                                display: flex;
+
+                                                gap: 5px;
+
+                                                flex-wrap: wrap;
+
+                                                margin-top: 9px;
+                                            }
+
+                                            .crop-tag {
+                                                padding: 5px 8px;
+
+                                                border-radius: 999px;
+
+                                                background:
+                                                    rgba(120, 150, 91, .15);
+
+                                                color:
+                                                    var(--green-dark);
+
+                                                font-size: 10px;
+
+                                                font-weight: 800;
+                                            }
+
+                                            .reason {
+                                                margin-top: 9px;
+
+                                                font-size: 11px;
+
+                                                line-height: 1.5;
+
+                                                color: var(--text-light);
+                                            }
+
+                                            .result-actions {
+                                                display: flex;
+
+                                                justify-content: center;
+
+                                                gap: 10px;
+
+                                                margin-top: 18px;
+                                            }
+
+                                            .secondary-button {
+                                                min-height: 50px;
+
+                                                padding: 0 20px;
+
+                                                border:
+                                                    1px solid var(--border);
+
+                                                border-radius:
+                                                    13px;
+
+                                                background:
+                                                    rgba(255, 255, 255, .55);
+
+                                                color:
+                                                    var(--green-dark);
+
+                                                font-weight: 800;
+
+                                                transition: var(--transition);
+                                            }
+
+                                            .secondary-button:hover {
+                                                background:
+                                                    var(--green-dark);
+
+                                                color:
+                                                    var(--cream);
+                                            }
+
+                                            .toast {
+                                                position: fixed;
+
+                                                left: 50%;
+
+                                                bottom: 25px;
+
+                                                z-index: 500;
+
+                                                transform:
+                                                    translate(-50%, 120px);
+
+                                                padding: 13px 19px;
+
+                                                border-radius: 999px;
+
+                                                background:
+                                                    var(--green-dark);
+
+                                                color:
+                                                    var(--cream);
+
+                                                font-size: 13px;
+
+                                                font-weight: 700;
+
+                                                box-shadow:
+                                                    0 15px 40px rgba(20, 40, 20, .2);
+
+                                                transition:
+                                                    transform 400ms ease;
+                                            }
+
+                                            .toast.show {
+                                                transform:
+                                                    translate(-50%, 0);
+                                            }
+
+                                            .footer {
+                                                position: fixed;
+
+                                                z-index: 20;
+
+                                                left: 30px;
+                                                bottom: 20px;
+
+                                                font-size: 11px;
+
+                                                color:
+                                                    rgba(24, 61, 32, .7);
+                                            }
+
+                                            @media (max-width: 800px) {
+
+                                                .topbar {
+                                                    padding:
+                                                        0 18px;
+                                                }
+
+                                                .brand-name {
+                                                    display: none;
+                                                }
+
+                                                .nav-btn {
+                                                    font-size: 0;
+
+                                                    width: 40px;
+
+                                                    padding: 0;
+                                                }
+
+                                                #aboutButton {
+                                                    font-size: 16px;
+                                                }
+
+                                                .content {
+                                                    padding:
+                                                        90px 12px 35px;
+                                                }
+
+                                                .main-card {
+                                                    padding:
+                                                        24px 16px;
+                                                }
+
+                                                .result-heading {
+                                                    font-size: 31px;
+                                                }
+
+                                                .selection-box {
+                                                    padding: 13px;
+                                                }
+
+                                                .crop-card {
+                                                    min-height: 155px;
+                                                }
+
+                                                .profile-grid {
+                                                    grid-template-columns:
+                                                        repeat(2, 1fr);
+                                                }
+
+                                                .crop-grid {
+                                                    grid-template-columns:
+                                                        1fr;
+                                                }
+
+                                                .selection-area {
+                                                    grid-template-columns:
+                                                        1fr;
+                                                }
+
+                                                .code-box {
+                                                    flex-direction:
+                                                        column;
+                                                }
+
+                                                .code-input {
+                                                    width: 100%;
+                                                }
+
+                                                .primary-button {
+                                                    width: 100%;
+                                                }
+
+                                                .farmer {
+                                                    --farmer-width: clamp(180px, 43vw, 245px);
+
+                                                    left: 3%;
+                                                    width: var(--farmer-width);
+                                                    bottom: 7%;
+                                                }
+
+                                                .farmer.move-center {
+                                                    left: 33%;
+                                                }
+
+                                                .farmer.move-right {
+                                                    left: calc(100% - var(--farmer-width) - 3vw);
+
+                                                    transform:
+                                                        scaleX(-1);
+                                                }
+
+                                                .farmer.move-right.happy {
+                                                    transform:
+                                                        scaleX(-1) translateY(-8px);
+                                                }
+
+                                                .sun {
+                                                    width: 90px;
+                                                    height: 90px;
+                                                }
+                                            }
+
+                                            @media (max-width: 480px) {
+
+                                                .hero-title {
+                                                    font-size: 40px;
+                                                }
+
+                                                .profile-grid {
+                                                    gap: 7px;
+                                                }
+
+                                                .profile-item {
+                                                    padding: 12px 8px;
+                                                }
+
+                                                .result-actions {
+                                                    flex-direction:
+                                                        column;
+                                                }
+
+                                                .secondary-button {
+                                                    width: 100%;
+                                                }
+
+                                                .farmer {
+                                                    opacity: .45;
+                                                }
+                                            }
+
+                                            .district-hero-name {
+                                                margin-top: 10px;
+                                                margin-bottom: 4px;
+                                                font-size: 28px;
+                                                font-weight: 900;
+                                                color: var(--green-dark);
+                                                letter-spacing: -0.5px;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                gap: 8px;
+                                            }
+
+                                            .district-hero-name::before {
+                                                content: "📍";
+                                                font-size: 22px;
+                                            }
+
+                                            .district-meta-bar {
+                                                display: flex;
+                                                justify-content: center;
+                                                gap: 8px;
+                                                flex-wrap: wrap;
+                                                margin-top: 6px;
+                                                margin-bottom: 6px;
+                                            }
+
+                                            .meta-pill {
+                                                display: inline-flex;
+                                                align-items: center;
+                                                padding: 4px 12px;
+                                                border-radius: 999px;
+                                                background: rgba(85, 124, 61, 0.12);
+                                                color: var(--green-dark);
+                                                font-size: 12px;
+                                                font-weight: 800;
+                                                border: 1px solid rgba(85, 124, 61, 0.2);
+                                            }
+
+                                            .suitability-badge {
+                                                display: inline-flex;
+                                                align-items: center;
+                                                gap: 4px;
+                                                font-size: 12.5px;
+                                                font-weight: 900;
+                                                color: var(--green-dark);
+                                                background: rgba(120, 150, 91, 0.18);
+                                                padding: 3px 8px;
+                                                border-radius: 6px;
+                                                margin-top: 6px;
+                                            }
+
+                                            .reasons-list {
+                                                margin-top: 10px;
+                                                padding-left: 18px;
+                                                display: flex;
+                                                flex-direction: column;
+                                                gap: 5px;
+                                                text-align: left;
+                                            }
+
+                                            .reason-item {
+                                                font-size: 11px;
+                                                line-height: 1.45;
+                                                color: #445533;
+                                            }
+
+                                            .transparency-card {
+                                                margin-top: 24px;
+                                                padding: 16px;
+                                                border: 1px solid var(--border);
+                                                border-radius: var(--radius-medium);
+                                                background: rgba(255, 255, 255, 0.52);
+                                                text-align: left;
+                                            }
+
+                                            .transparency-title {
+                                                font-size: 13.5px;
+                                                font-weight: 800;
+                                                color: var(--green-dark);
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: space-between;
+                                                flex-wrap: wrap;
+                                                gap: 8px;
+                                            }
+
+                                            .confidence-badge {
+                                                display: inline-flex;
+                                                align-items: center;
+                                                padding: 3px 10px;
+                                                border-radius: 999px;
+                                                font-size: 10.5px;
+                                                font-weight: 800;
+                                                letter-spacing: 0.3px;
+                                            }
+
+                                            .confidence-high {
+                                                background: rgba(46, 125, 50, 0.15);
+                                                color: #1b5e20;
+                                                border: 1px solid rgba(46, 125, 50, 0.3);
+                                            }
+
+                                            .confidence-medium {
+                                                background: rgba(245, 124, 0, 0.15);
+                                                color: #b75300;
+                                                border: 1px solid rgba(245, 124, 0, 0.3);
+                                            }
+
+                                            .confidence-limited {
+                                                background: rgba(211, 47, 47, 0.15);
+                                                color: #b71c1c;
+                                                border: 1px solid rgba(211, 47, 47, 0.3);
+                                            }
+
+                                            .transparency-grid {
+                                                display: grid;
+                                                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+                                                gap: 10px;
+                                                margin-top: 12px;
+                                            }
+
+                                            .transparency-item {
+                                                padding: 8px 10px;
+                                                background: rgba(255, 255, 255, 0.5);
+                                                border-radius: var(--radius-small);
+                                                border: 1px solid rgba(120, 150, 91, 0.15);
+                                            }
+
+                                            .transparency-label {
+                                                font-size: 10px;
+                                                color: var(--text-light);
+                                                margin-bottom: 2px;
+                                            }
+
+                                            .transparency-val {
+                                                font-size: 12px;
+                                                font-weight: 800;
+                                                color: var(--text);
+                                            }
+
+                                            .transparency-disclaimer {
+                                                margin-top: 12px;
+                                                font-size: 11px;
+                                                color: var(--text-light);
+                                                font-style: italic;
+                                                border-top: 1px dashed var(--border);
+                                                padding-top: 8px;
+                                            }
+
+                                            .landscape {
+                                                transition: background 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+                                            }
+
+                                            .hill,
+                                            .field,
+                                            .cloud {
+                                                transition: background 1.5s cubic-bezier(0.4, 0, 0.2, 1),
+                                                    filter 1.5s ease;
+                                            }
+
+                                            .sun {
+                                                transition: transform 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+                                                    opacity 1.3s ease;
+                                            }
+
+                                            body.dark-mode .sun {
+                                                transform: translate(130px, 230px) scale(0.45);
+                                                opacity: 0;
+                                                pointer-events: none;
+                                            }
+
+                                            .moon {
+                                                position: absolute;
+                                                width: 130px;
+                                                height: 130px;
+                                                top: 11%;
+                                                right: 13%;
+                                                border-radius: 50%;
+                                                opacity: 0;
+                                                pointer-events: none;
+                                                transform: translate(-280px, 240px) scale(0.45);
+                                                transition: transform 1.8s cubic-bezier(0.34, 1.15, 0.64, 1),
+                                                    opacity 1.4s ease;
+                                                z-index: 2;
+                                            }
+
+                                            .moon img {
+                                                display: block;
+                                                width: 100%;
+                                                height: 100%;
+                                                object-fit: contain;
+                                                filter: drop-shadow(0 0 22px rgba(255, 255, 230, 0.7)) drop-shadow(0 0 45px rgba(190, 220, 255, 0.45));
+                                                animation: moonPulse 6s ease-in-out infinite;
+                                            }
+
+                                            @keyframes moonPulse {
+
+                                                0%,
+                                                100% {
+                                                    transform: scale(1);
+                                                }
+
+                                                50% {
+                                                    transform: scale(1.04);
+                                                }
+                                            }
+
+                                            body.dark-mode .moon {
+                                                transform: translate(0, 0) scale(1);
+                                                opacity: 1;
+                                                pointer-events: auto;
+                                            }
+
+                                            .stars-container {
+                                                position: absolute;
+                                                inset: 0;
+                                                height: 58%;
+                                                pointer-events: none;
+                                                opacity: 0;
+                                                transition: opacity 1.8s ease 0.2s;
+                                                z-index: 1;
+                                                overflow: hidden;
+                                            }
+
+                                            body.dark-mode .stars-container {
+                                                opacity: 1;
+                                            }
+
+                                            .star {
+                                                position: absolute;
+                                                border-radius: 50%;
+                                                background: #ffffff;
+                                                box-shadow: 0 0 3px #ffffff, 0 0 7px rgba(255, 255, 255, 0.85);
+                                                animation: starTwinkle 3.2s ease-in-out infinite alternate;
+                                            }
+
+                                            @keyframes starTwinkle {
+                                                0% {
+                                                    opacity: 0.22;
+                                                    transform: scale(0.75);
+                                                }
+
+                                                50% {
+                                                    opacity: 0.95;
+                                                    transform: scale(1.15);
+                                                }
+
+                                                100% {
+                                                    opacity: 0.32;
+                                                    transform: scale(0.85);
+                                                }
+                                            }
+
+                                            body.dark-mode .landscape {
+                                                background: linear-gradient(to bottom,
+                                                        #06101c 0%,
+                                                        #0b1a2c 38%,
+                                                        #11253a 55%,
+                                                        #153029 75%,
+                                                        #183626 100%);
+                                            }
+
+                                            body.dark-mode .cloud {
+                                                background: rgba(165, 195, 220, 0.12);
+                                            }
+
+                                            body.dark-mode .cloud::before,
+                                            body.dark-mode .cloud::after {
+                                                background: inherit;
+                                            }
+
+                                            body.dark-mode .hill.back {
+                                                background: #142e23;
+                                            }
+
+                                            body.dark-mode .hill.front {
+                                                background: #0f241a;
+                                            }
+
+                                            body.dark-mode .field {
+                                                background:
+                                                    repeating-linear-gradient(8deg,
+                                                        rgba(6, 16, 10, .5) 0px,
+                                                        rgba(6, 16, 10, .5) 2px,
+                                                        transparent 2px,
+                                                        transparent 18px),
+                                                    linear-gradient(to bottom,
+                                                        #1e381f,
+                                                        #132414);
+                                            }
+
+                                            body.dark-mode .brand-name {
+                                                color: #e2f0d9;
+                                            }
+
+                                            body.dark-mode .nav-btn {
+                                                background: rgba(22, 44, 34, 0.72);
+                                                color: #e2f0d9;
+                                                border-color: rgba(140, 180, 140, 0.3);
+                                            }
+
+                                            body.dark-mode .nav-btn:hover {
+                                                background: rgba(35, 68, 52, 0.9);
+                                            }
+
+                                            body.dark-mode .footer {
+                                                color: rgba(210, 235, 210, 0.65);
+                                            }
+
+                                            .zzz-container {
+                                                position: absolute;
+                                                top: 2%;
+                                                right: 4%;
+                                                width: clamp(45px, 4.5vw, 65px);
+                                                height: clamp(45px, 4.5vw, 65px);
+                                                pointer-events: none;
+                                                opacity: 0;
+                                                transform: translateY(10px) scale(0.6);
+                                                transition: opacity 800ms ease, transform 800ms ease;
+                                                z-index: 12;
+                                            }
+
+                                            .zzz-icon {
+                                                display: block;
+                                                width: 100%;
+                                                height: 100%;
+                                                object-fit: contain;
+                                                filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
+                                            }
+
+                                            body.dark-mode .zzz-container {
+                                                opacity: 1;
+                                                animation: zzzFloatLoop 3.2s ease-in-out infinite;
+                                            }
+
+                                            @keyframes zzzFloatLoop {
+                                                0% {
+                                                    transform: translate(0, 8px) scale(0.65);
+                                                    opacity: 0;
+                                                }
+
+                                                22% {
+                                                    opacity: 0.95;
+                                                }
+
+                                                68% {
+                                                    transform: translate(-15px, -24px) scale(1.05);
+                                                    opacity: 0.9;
+                                                }
+
+                                                100% {
+                                                    transform: translate(-25px, -52px) scale(1.25);
+                                                    opacity: 0;
+                                                }
+                                            }
+
+                                            body.dark-mode .farmer-character.sleepy {
+                                                animation: sleepyFarmerBreathe 4.8s ease-in-out infinite !important;
+                                                transform-origin: 50% 90%;
+                                            }
+
+                                            @keyframes sleepyFarmerBreathe {
+
+                                                0%,
+                                                100% {
+                                                    transform: scale(1) translateY(0);
+                                                }
+
+                                                50% {
+                                                    transform: scale(1.018, 1.025) translateY(-3px);
+                                                }
+                                            }
+
+                                            @media (max-width: 900px) {
+                                                .moon {
+                                                    width: 95px;
+                                                    height: 95px;
+                                                }
+                                            }

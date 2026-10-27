@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: light;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="color-scheme" content="light">
+
+    <title> HARIT SAMPADA - Smart Crop Planning</title>
+
+    <meta name="description" content="A farmer-friendly crop recommendation platform.">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="intro-screen" id="introScreen">
+
+        <div class="intro-logo">
+
+            <div class="intro-logo-mark">
+                <img src="assets/harit sampada logo.png" alt="HARIT SAMPADA Logo">
+            </div>
+
+            <h1>HARIT SAMPADA </h1>
+
+            <p data-i18n-html="introTagline">
+                Better crops, Better decisions, <br>
+                Which brings Agricultural Prosperity.
+            </p>
+
+        </div>
+
+    </div>
+
+    <main class="app">
+
+        <div class="landscape" id="landscape">
+
+            <div class="stars-container" id="starsContainer"></div>
+
+            <div class="sun" id="sun"></div>
+
+            <div class="moon" id="moon">
+                <img src="assets/full-moon.png" alt="Full Moon">
+            </div>
+
+            <div class="cloud one"></div>
+            <div class="cloud two"></div>
+
+            <div class="hill back"></div>
+            <div class="hill front"></div>
+
+            <div class="field"></div>
+
+            <div class="farmer" id="farmer">
+                <div class="zzz-container" id="zzzContainer">
+                    <img class="zzz-icon" src="assets/zzz.png" alt="Sleeping Zzz">
+                </div>
+                <img class="farmer-character" id="farmerCharacter" src="assets/sad farmer.png"
+                    alt="Sad Indian farmer waiting for crop recommendations">
+            </div>
+
+        </div>
+
+        <header class="topbar">
+
+            <div class="brand" id="brand">
+
+                <div class="brand-mark">
+                    <img src="assets/harit sampada logo.png" alt="HARIT SAMPADA Logo">
+                </div>
+
+                <div class="brand-name">
+                    HARIT SAMPADA
+                </div>
+
+            </div>
+
+            <div class="nav-actions">
+
+                <button class="nav-btn" id="themeButton" type="button" title="Switch to Night Mode"
+                    aria-label="Toggle Night Mode">
+                    🌙
+                </button>
+
+                <button class="nav-btn" id="languageButton" type="button" title="Language" aria-label="Change language">
+                    EN
+                </button>
+
+                <button class="nav-btn" id="helpButton" title="Help" aria-label="Help">
+                    ?
+                </button>
+
+                <button class="nav-btn" id="aboutButton" type="button" title="About Harit Sampada"
+                    aria-label="About Harit Sampada">
+                    i
+                </button>
+
+                <button class="nav-btn" id="settingsButton" title="Settings" aria-label="Settings">
+                    ⚙
+                </button>
+
+            </div>
+
+        </header>
+
+        <section class="content">
+
+            <div class="main-card" id="mainCard">
+
+                <div id="startScreen">
+
+                    <span class="eyebrow" data-i18n="startEyebrow">
+                        🌾 Harit Sampada Crop Planning
+                    </span>
+
+                    <h2 class="hero-title">
+
+                        <span data-i18n="heroTitleStart">Apne Khet Ki</span>
+
+                        <span>
+                            <span data-i18n="heroTitleEnd">Sahi Fasal Chunein.</span>
+                        </span>
+
+                    </h2>
+
+                    <p class="hero-description" data-i18n="heroDescription">
+
+                        Apna land code enter kijiye.
+                        Hum aapki zameen, mitti, paani,
+                        mausam aur budget ke according
+                        suitable crops suggest karenge.
+
+                    </p>
+
+                    <form class="code-box" id="landForm">
+
+                        <input class="code-input" id="landCode" type="text" placeholder="Enter your land code"
+                            data-i18n-placeholder="landCodePlaceholder" autocomplete="off" maxlength="30" required>
+
+                        <button class="primary-button" type="submit" data-i18n="submitButton">
+                            What to Sow
+                        </button>
+
+                    </form>
+
+                    <p class="hint" data-i18n="analysisHint">
+                        Your land code will be used for agricultural analysis.
+                    </p>
+
+                </div>
+
+                <div class="loading" id="loadingScreen">
+
+                    <div class="loading-circle"></div>
+
+                    <p class="loading-text" data-i18n="loadingText">
+                        Aapke khet ko samjha ja raha hai...
+                    </p>
+
+                    <p class="hint" data-i18n="loadingHint">
+                        Mitti • Mausam • Paani • Budget
+                    </p>
+
+                </div>
+
+                <div class="result-screen" id="resultScreen">
+
+                    <span class="eyebrow" data-i18n="profileEyebrow">
+                        Analysis Status
+                    </span>
+
+                    <h2 class="result-heading">
+
+                        <span data-i18n="resultTitleStart">Analysis</span>
+
+                        <span>
+                            <span data-i18n="resultTitleEnd">Report</span>
+                        </span>
+
+                    </h2>
+
+                    <h3 class="district-hero-name" id="districtHeroName">
+                        —
+                    </h3>
+
+                    <div class="district-meta-bar" id="districtMetaBar">
+                        <span class="meta-pill" id="landCodeBadge">UP-140</span>
+                        <span class="meta-pill" id="zoneBadge">Western Plain Zone</span>
+                    </div>
+
+                    <div class="profile-grid">
+
+                        <div class="profile-item">
+
+                            <div class="profile-icon">
+                                📍
+                            </div>
+
+                            <div class="profile-label" data-i18n="regionLabel">
+                                Region
+                            </div>
+
+                            <div class="profile-value" id="regionValue">
+                                —
+                            </div>
+
+                        </div>
+
+                        <div class="profile-item">
+
+                            <div class="profile-icon">
+                                🪨
+                            </div>
+
+                            <div class="profile-label" data-i18n="soilLabel">
+                                Soil
+                            </div>
+
+                            <div class="profile-value" id="soilValue">
+                                —
+                            </div>
+
+                        </div>
+
+                        <div class="profile-item">
+
+                            <div class="profile-icon">
+                                🌾
+                            </div>
+
+                            <div class="profile-label" data-i18n="landLabel">
+                                Land
+                            </div>
+
+                            <div class="profile-value" id="areaValue">
+                                —
+                            </div>
+
+                        </div>
+
+                        <div class="profile-item">
+
+                            <div class="profile-icon">
+                                🌦️
+                            </div>
+
+                            <div class="profile-label" data-i18n="seasonLabel">
+                                Season
+                            </div>
+
+                            <div class="profile-value" id="seasonValue">
+                                —
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="selection-area">
+
+                        <div class="selection-box">
+
+                            <h4 data-i18n="waterQuestion">
+                                💧 Paani Kitna Available Hai?
+                            </h4>
+
+                            <div class="option-group">
+
+                                <button class="option selected" data-type="water" data-value="low">
+                                    <span data-i18n="lowOption">Kam</span>
+                                </button>
+
+                                <button class="option" data-type="water" data-value="medium">
+                                    <span data-i18n="mediumOption">Madhyam</span>
+                                </button>
+
+                                <button class="option" data-type="water" data-value="high">
+                                    <span data-i18n="highOption">Zyada</span>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <div class="selection-box">
+
+                            <h4 data-i18n="budgetQuestion">
+                                💰 Aapka Budget?
+                            </h4>
+
+                            <div class="option-group">
+
+                                <button class="option selected" data-type="budget" data-value="low">
+                                    <span data-i18n="lowOption">Kam</span>
+                                </button>
+
+                                <button class="option" data-type="budget" data-value="medium">
+                                    <span data-i18n="mediumOption">Madhyam</span>
+                                </button>
+
+                                <button class="option" data-type="budget" data-value="high">
+                                    <span data-i18n="highOption">Zyada</span>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="recommendation" id="recommendation">
+
+                        <h3 class="recommendation-title" data-i18n="recommendationTitle">
+                            🌱 Aapke Liye Behtar Faslein
+                        </h3>
+
+                        <p class="recommendation-subtitle" data-i18n="recommendationSubtitle">
+                            Aapki zameen aur selected conditions ke according.
+                        </p>
+
+                        <div class="crop-grid" id="cropGrid">
+
+                        </div>
+
+                        <div class="transparency-card" id="transparencyCard">
+                            <div class="transparency-title">
+                                <span data-i18n="dataUsedForAnalysis">Data Used for Analysis</span>
+                                <span class="confidence-badge confidence-high" id="confidenceBadge"
+                                    data-i18n="confidenceHigh">High Confidence</span>
+                            </div>
+                            <div class="transparency-grid" id="transparencyGrid"></div>
+                            <div class="transparency-disclaimer" data-i18n="dataDisclaimer">
+                                Prototype analysis based on available agricultural data (Govt of UP / ICAR / Census
+                                2011).
+                            </div>
+                        </div>
+
+                        <div class="result-actions">
+
+                            <button class="secondary-button" id="newSearch">
+                                <span data-i18n="newSearchButton">← Naya Khet</span>
+                            </button>
+
+                            <button class="primary-button" id="cropPlanButton">
+                                <span data-i18n="cropPlanButton">Crop Plan Dekhein →</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="footer">
+
+            <span data-i18n="appFooter">HARIT SAMPADA</span>
+
+        </div>
+
+        <div class="toast" id="toast">
+            Message
+        </div>
+
+        <div class="about-modal" id="aboutModal" role="dialog" aria-modal="true" aria-labelledby="aboutTitle"
+            aria-hidden="true">
+
+            <div class="about-panel">
+
+                <button class="about-close" id="aboutClose" type="button" title="Close About panel"
+                    aria-label="Close About panel">
+                    x
+                </button>
+
+                <div class="about-brand">
+                    <div class="about-brand-mark">
+                        <img src="assets/harit sampada logo.png" alt="HARIT SAMPADA logo">
+                    </div>
+                    <span>HARIT SAMPADA</span>
+                </div>
+
+                <h2 id="aboutTitle" data-i18n="aboutTitle">About Harit Sampada</h2>
+
+                <p class="about-description" data-i18n="aboutDescription">
+                    Harit Sampada is a smart crop-planning platform designed to help farmers choose suitable crops
+                    based on land, soil, water availability, season, and other agricultural factors.
+                </p>
+
+                <p class="about-prototype" data-i18n-html="aboutPrototype">
+                    Developed as a prototype for <strong>Smart India Hackathon - SIH26193</strong>.
+                </p>
+
+                <p class="about-prototype" data-i18n="aboutContext">
+                    India is an agriculture-rich country, and Harit Sampada aims to empower farmers with data-driven
+                    insights for better crop planning and agricultural prosperity. We are one of the largest producers
+                    of rice, wheat, sugarcane, and cotton, while still importing some pulses and oilseeds. Keeping this
+                    in mind, we have developed this platform to help farmers choose suitable crops based on their land,
+                    soil, water availability, season, and other agricultural factors.
+                </p>
+
+                <p class="about-footer" data-i18n="aboutFooter">Data-driven crop planning for better agricultural
+                    decisions.</p>
+
+            </div>
+
+        </div>
+
+        <div class="about-modal help-modal" id="helpModal" role="dialog" aria-modal="true" aria-labelledby="helpTitle"
+            aria-hidden="true">
+
+            <div class="about-panel help-panel">
+
+                <button class="about-close" id="helpClose" type="button" title="Close Help panel"
+                    aria-label="Close Help panel">
+                    x
+                </button>
+
+                <div class="about-brand">
+                    <div class="about-brand-mark">
+                        <span>?</span>
+                    </div>
+                    <span data-i18n="helpLabel">HELP</span>
+                </div>
+
+                <h2 id="helpTitle" data-i18n="helpTitle">How it works</h2>
+
+                <p class="about-description" data-i18n="helpDescription">
+                    Submit your land code to begin the agricultural analysis process.
+                </p>
+
+                <div class="about-workflow help-workflow">
+                    <ol>
+                        <li><span>1</span><span data-i18n="stepOne">Enter Land Code</span></li>
+                        <li><span>2</span><span data-i18n="stepTwo">Analyze farm conditions</span></li>
+                        <li><span>3</span><span data-i18n="stepThree">Compare crop suitability</span></li>
+                        <li><span>4</span><span data-i18n="stepFour">Get crop recommendations</span></li>
+                    </ol>
+                </div>
+
+                <p class="about-footer" data-i18n="helpFooter">Your analysis will be available here once the system is
+                    ready. </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="../database/translations.js"></script>
+    <script src="../database/districts.js"></script>
+    <script src="../database/crops.js"></script>
+    <script src="../api/landCode.js"></script>
+    <script src="../api/cropScoring.js"></script>
+    <script src="../api/recommendationService.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
